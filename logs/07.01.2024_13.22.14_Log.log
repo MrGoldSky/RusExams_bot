@@ -1,4 +1,0 @@
-2024-01-07 13:22:14,554 [__main__:INFO] [main.py <23>: main.<module>] Logger successfully installed
-2024-01-07 13:22:14,554 [__main__:INFO] [main.py <24>: main.<module>] Starting bot
-2024-01-07 13:22:16,415 [__main__:INFO] [main.py <32>: main.start] Connected to datebase(user_base) for userid=788207542
-2024-01-07 13:22:16,416 [__main__:INFO] [main.py <42>: main.start] Connection to database(user_base) : restarting bot for userid=788207542

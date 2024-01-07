@@ -1,4 +1,0 @@
-2024-01-07 14:32:34,778 [__main__:INFO] [main.py <23>: main.<module>] Logger successfully installed
-2024-01-07 14:32:34,778 [__main__:INFO] [main.py <24>: main.<module>] Starting bot
-2024-01-07 14:32:34,967 [__main__:DEBUG] [main.py <66>: main.statistics] Reply statistics for userid=788207542
-2024-01-07 14:32:34,968 [__main__:INFO] [main.py <70>: main.statistics] Connected to datebase(base) for userid=788207542
