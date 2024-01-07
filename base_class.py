@@ -1,10 +1,15 @@
 import sqlite3
 
 
-def connect_to_db(self):
+def connect_to_db(base):
+    
+    if base == 'user_base':
+        path = 'user_base/user_base.sqlite3'
+    elif base == 'question4':
+        path = 'base/questions/4/question4.sqlite3'
     try:
-        con = sqlite3.connect("C:/Users/Mr_GoldSky_/Desktop/My_bot/bot_data/My_bot_db.sqlite")
+        con = sqlite3.connect(path)
         cur = con.cursor()
         return con, cur
-    except BaseException:
-        print("Ошибка подключения к БД")
+    except BaseException as e:
+        return e

@@ -1,0 +1,4 @@
+2024-01-07 12:12:54,756 [__main__:INFO] [main.py <23>: main.<module>] Logger successfully installed
+2024-01-07 12:12:54,756 [__main__:INFO] [main.py <24>: main.<module>] Starting bot
+2024-01-07 12:12:55,189 [__main__:INFO] [main.py <33>: main.start] Connected to datebase(user_base) for userid=788207542
+2024-01-07 12:12:55,190 [__main__:ERROR] [main.py <43>: main.start] Insert to database(user_base) ERROR: values=788207542, Илья exception=1 values for 2 columns
