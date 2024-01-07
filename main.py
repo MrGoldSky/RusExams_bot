@@ -94,13 +94,16 @@ def solve(message):
     not_solved = types.KeyboardButton(f"Решать нерешенные")
     solved = types.KeyboardButton(f"Повторить решенные")
     solve_any = types.KeyboardButton(f"Решать любые")
-    markup.add(not_solved, solve_any, solved)
-    printy(message.chat.id, "Что решаем?):", reply_markup=markup)
-    printy(message.chat.id, "Напиши: Стоп чтобы выйти из режима экзамена")
+    markup.add(not_solved, solved, solve_any)
+    printy(message.chat.id, """Ударения ставь используя большую букву (трубопровОд).\n
+Учти, что все остальные буквы должны быть ПРОПИСНЫЕ.\n
+Чтобы закончить- напиши: Стоп""", reply_markup=markup)
 
 
 @bot.message_handler(func=lambda message: message.text == f"Решать любые")
 def start_solve_any(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup.add(types.KeyboardButton(f"Стоп"))
     logger.debug(f"Reply solve(any) for userid={message.chat.id}")
     connection = connect_to_db()
     if len(connection) == 2:
@@ -120,10 +123,12 @@ def start_solve_any(message):
     except BaseException as e:
         logger.error(f"Select from table (question4) ERROR: user_id={message.chat.id} values= ids, task, correct exception={e}")
 
-    bot.register_next_step_handler(printy(message.chat.id, f'{task}'), check, correct, "any", solve_id)
+    bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "any", solve_id)
 
 
 def check(message, correct: str, type_solve: str, solve_id: int):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup.add(types.KeyboardButton(f"Стоп"))
     logger.debug(f'Checking for userid={message.chat.id} user_input={message.text}, correct={correct}')
     connection = connect_to_db()
     if len(connection) == 2:
@@ -146,7 +151,7 @@ def check(message, correct: str, type_solve: str, solve_id: int):
             con.close()
         except BaseException as e:
             logger.error(f"UPDATE table (solved) ERROR: values=solve_id, task_id, correct exception={e}")
-        printy(message.chat.id, f"{chr(128077)}")
+        printy(message.chat.id, f"{chr(128077)}", reply_markup=markup)
     else:
         try:            
             if len(cur.execute(f"SELECT solved FROM solved WHERE task_id == {solve_id} AND user_id == {message.chat.id}").fetchall()):
@@ -160,6 +165,7 @@ def check(message, correct: str, type_solve: str, solve_id: int):
             logger.error(f"UPDATE table (user_base) ERROR: values=solve_id, task, correct exception={e}")
 
         printy(message.chat.id, f"{chr(128078)}")
+        printy(message.chat.id, f"{correct.lower()} - {correct}", reply_markup=markup)
     if type_solve == 'any':
         start_solve_any(message)
 
