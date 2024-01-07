@@ -1,0 +1,7 @@
+2024-01-07 14:06:20,621 [__main__:INFO] [main.py <23>: main.<module>] Logger successfully installed
+2024-01-07 14:06:20,621 [__main__:INFO] [main.py <24>: main.<module>] Starting bot
+2024-01-07 14:06:25,347 [__main__:INFO] [main.py <32>: main.start] Connected to datebase(base) for userid=788207542
+2024-01-07 14:06:25,347 [__main__:INFO] [main.py <42>: main.start] Connection to database(base): restarting bot for userid=788207542
+2024-01-07 14:07:16,643 [__main__:DEBUG] [main.py <67>: main.statistics] Reply statistics for userid=788207542
+2024-01-07 14:07:16,644 [__main__:INFO] [main.py <71>: main.statistics] Connected to datebase(base) for userid=788207542
+2024-01-07 14:07:16,645 [__main__:ERROR] [main.py <81>: main.statistics] Select from table (user_base) ERROR: values=accepted, wrong_answer exception=no such table: base
