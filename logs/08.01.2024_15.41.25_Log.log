@@ -1,0 +1,12 @@
+2024-01-08 15:41:25,296 [__main__:INFO] [main.py <19>: main.<module>] Logger successfully installed
+2024-01-08 15:41:25,296 [__main__:INFO] [main.py <20>: main.<module>] Starting bot
+2024-01-08 15:41:27,840 [__main__:DEBUG] [main.py <139>: main.start_solve_not_solved] Reply solve(not_solved) for userid=788207542
+2024-01-08 15:41:27,841 [__main__:DEBUG] [main.py <143>: main.start_solve_not_solved] Connected to datebase(base) for userid=788207542
+2024-01-08 15:41:30,099 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=788207542 user_input=Стоп, correct=перелилА
+2024-01-08 15:41:30,099 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=788207542
+2024-01-08 15:41:30,100 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=788207542
+2024-01-08 15:41:30,100 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=788207542
+2024-01-08 15:53:36,686 [__main__:DEBUG] [main.py <77>: main.statistics] Reply statistics for userid=788207542
+2024-01-08 15:53:36,687 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=788207542
+2024-01-08 15:53:40,646 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
+2024-01-08 15:53:40,647 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542

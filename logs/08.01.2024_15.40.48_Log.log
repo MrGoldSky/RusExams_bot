@@ -1,0 +1,4 @@
+2024-01-08 15:40:48,239 [__main__:INFO] [main.py <19>: main.<module>] Logger successfully installed
+2024-01-08 15:40:48,239 [__main__:INFO] [main.py <20>: main.<module>] Starting bot
+2024-01-08 15:41:03,297 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=788207542
+2024-01-08 15:41:03,299 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=788207542

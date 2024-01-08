@@ -1,0 +1,6 @@
+2024-01-08 15:05:48,652 [__main__:INFO] [main.py <19>: main.<module>] Logger successfully installed
+2024-01-08 15:05:48,652 [__main__:INFO] [main.py <20>: main.<module>] Starting bot
+2024-01-08 15:05:48,870 [__main__:DEBUG] [main.py <77>: main.statistics] Reply statistics for userid=788207542
+2024-01-08 15:05:48,871 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=788207542
+2024-01-08 15:05:51,403 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
+2024-01-08 15:05:51,404 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542
