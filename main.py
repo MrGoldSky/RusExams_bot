@@ -56,6 +56,22 @@ def information(message):
     printy(message.chat.id, "Создатель бота: https://t.me/Mr_GoldSky")
 
 
+@bot.message_handler(func=lambda message: message.text == f"{chr(128290)}Выбор номера ЕГЭ{chr(128290)}")
+def choise_number(message):
+    logger.debug(f"Reply choise_number for userid={message.chat.id}")
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    number_4 = types.KeyboardButton(f"Номер 4 (ударения)")
+    markup.add(number_4)
+    printy(message.chat.id, "Выберете номер ЕГЭ", reply_markup=markup)
+    bot.register_next_step_handler(message, change_number)
+
+
+@bot.message_handler(func=lambda message: 'Номер ' in message.text)
+def change_number(message):
+    printy(message.chat.id, f"Текущий номер: {message.text}")
+    start(message)
+
+
 @bot.message_handler(func=lambda message: message.text == f"{chr(128161)}Статистика{chr(128161)}")
 def statistics(message):
     logger.debug(f"Reply statistics for userid={message.chat.id}")
@@ -157,7 +173,7 @@ def check(message, correct: str, type_solve: str, solve_id: int):
     if message.text == "Стоп":
         start(message)
         return
-    if message.text == correct:
+    if message.text == correct or (message.text[0].upper() + message.text[1:] == correct[0].upper() + correct[1:]):
         try:
             if len(cur.execute(f"SELECT solved FROM solved WHERE task_id == {solve_id} AND user_id == {message.chat.id}").fetchall()):
                 cur.execute(f"""UPDATE solved SET solved = 1 WHERE task_id == {solve_id} AND user_id == {message.chat.id}""")
