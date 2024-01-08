@@ -99,7 +99,7 @@ def statistics(message):
 @bot.message_handler(func=lambda message: message.text == f"Начать решать!")
 def solve(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    not_solved = types.KeyboardButton(f"Решать нерешенные")
+    not_solved = types.KeyboardButton(f"Стоп")
     solved = types.KeyboardButton(f"Повторить решенные")
     solve_any = types.KeyboardButton(f"Решать любые")
     markup.add(not_solved, solved, solve_any)
@@ -132,7 +132,7 @@ def start_solve_any(message):
     bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "any", solve_id)
 
 
-@bot.message_handler(func=lambda message: message.text == f"Решать нерешенные")
+@bot.message_handler(func=lambda message: message.text == f"Стоп")
 def start_solve_not_solved(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     markup.add(types.KeyboardButton(f"Стоп"))
@@ -145,7 +145,7 @@ def start_solve_not_solved(message):
         logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
     try:
         ids = cur.execute(f"""SELECT id FROM question4""").fetchall()
-        solved = cur.execute(f"""SELECT task_id FROM solved WHERE solved == 1""").fetchall()   
+        solved = cur.execute(f"""SELECT task_id FROM solved WHERE solved == 1 AND user_id == {message.chat.id}""").fetchall()   
         solve_id = random.choice(ids)
         while solve_id in solved:
             solve_id = random.choice(ids)
@@ -158,6 +158,31 @@ def start_solve_not_solved(message):
     except BaseException as e:
         logger.error(f"Select from table (question4, solved) ERROR: user_id={message.chat.id} values= ids, task, correct, task_id exception={e}")
     bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "not_solved", solve_id)
+
+
+@bot.message_handler(func=lambda message: message.text == f"Повторить решенные")
+def start_solve_solved(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup.add(types.KeyboardButton(f"Стоп"))
+    logger.debug(f"Reply solve(solved) for userid={message.chat.id}")
+    connection = connect_to_db()
+    if len(connection) == 2:
+        con, cur = connection[0], connection[1]
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
+    else:
+        logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
+    try:
+        ids = cur.execute(f"""SELECT id FROM question4""").fetchall()
+        solved = cur.execute(f"""SELECT task_id FROM solved WHERE solved == 1 AND user_id == {message.chat.id}""").fetchall()   
+        solve_id = random.choice(solved)[0]
+        task = cur.execute(f"""SELECT task FROM question4 
+                               WHERE id == {solve_id}""").fetchone()[0]
+        correct = cur.execute(f"""SELECT correct FROM question4
+                                  WHERE id == {solve_id}""").fetchone()[0]
+        con.close()
+    except BaseException as e:
+        logger.error(f"Select from table (question4, solved) ERROR: user_id={message.chat.id} values= ids, task, correct, task_id exception={e}")
+    bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "solved", solve_id)
 
 
 def check(message, correct: str, type_solve: str, solve_id: int):
@@ -202,6 +227,8 @@ def check(message, correct: str, type_solve: str, solve_id: int):
         start_solve_any(message)
     elif type_solve == 'not_solved':
         start_solve_not_solved(message)
+    elif type_solve == 'solved':
+        start_solve_solved(message)
 
 
 @bot.message_handler(func=lambda message: message.text == f"{chr(128175)}Топ пользователей{chr(128175)}")
@@ -241,6 +268,11 @@ def top(message):
         text += f'{chr(rewards[i + 1])} [{current_top[i]["name"]}](https://t.me/{current_top[i]["username"]})\n'
         text += f'Решено верно{chr(9989)}: {current_top[i]["current_accepted"]} Решено неверно{chr(10060)}: {current_top[i]["current_wrong_answer"]}\n'
     printy(message.chat.id, text, parse_mode='MarkdownV2', disable_web_page_preview=True)
+
+
+@bot.message_handler(func=lambda message: message.text == f"Стоп")
+def stop(message):
+    start(message)
 
 
 bot.polling(none_stop=True)
