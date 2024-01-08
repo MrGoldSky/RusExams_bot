@@ -5,15 +5,16 @@ from base_class import *
 import app_logger
 from config import BOT_TOKEN
 import random
+import time
 
-
+time.sleep(5)
 bot = telebot.TeleBot(BOT_TOKEN)
 
 printy = bot.send_message
 
 cwd = os.getcwd()
-# os.chdir(f'logs')
-os.chdir('C:\\Users\\Mr_GoldSky_\\Desktop\\RusExams_bot\\logs')
+os.chdir(f'data/logs')
+# os.chdir('C:\\Users\\Mr_GoldSky_\\Desktop\\RusExams_bot\\data\\logs')
 logger = app_logger.get_logger(__name__)
 os.chdir(cwd)
 logger.info('Logger successfully installed')
@@ -99,7 +100,7 @@ def statistics(message):
 @bot.message_handler(func=lambda message: message.text == f"Начать решать!")
 def solve(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    not_solved = types.KeyboardButton(f"Стоп")
+    not_solved = types.KeyboardButton(f"Решать нерешенные")
     solved = types.KeyboardButton(f"Повторить решенные")
     solve_any = types.KeyboardButton(f"Решать любые")
     markup.add(not_solved, solved, solve_any)
@@ -132,7 +133,7 @@ def start_solve_any(message):
     bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "any", solve_id)
 
 
-@bot.message_handler(func=lambda message: message.text == f"Стоп")
+@bot.message_handler(func=lambda message: message.text == f"Решать нерешенные")
 def start_solve_not_solved(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     markup.add(types.KeyboardButton(f"Стоп"))
@@ -198,7 +199,10 @@ def check(message, correct: str, type_solve: str, solve_id: int):
     if message.text == "Стоп":
         start(message)
         return
-    if message.text == correct or (message.text[0].upper() + message.text[1:] == correct[0].upper() + correct[1:]):
+    user_input = message.text
+    user_input = (user_input[0].upper() + user_input[1:]).replace('е', 'ё').replace('Е', 'Ё')
+    correct = (correct[0].upper() + correct[1:]).replace('е', 'ё').replace('Е', 'Ё')
+    if user_input == correct:
         try:
             if len(cur.execute(f"SELECT solved FROM solved WHERE task_id == {solve_id} AND user_id == {message.chat.id}").fetchall()):
                 cur.execute(f"""UPDATE solved SET solved = 1 WHERE task_id == {solve_id} AND user_id == {message.chat.id}""")

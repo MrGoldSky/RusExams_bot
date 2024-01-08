@@ -10,3 +10,5 @@
 2024-01-08 15:53:36,687 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=788207542
 2024-01-08 15:53:40,646 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
 2024-01-08 15:53:40,647 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542
+2024-01-08 16:02:48,083 [__main__:DEBUG] [main.py <77>: main.statistics] Reply statistics for userid=788207542
+2024-01-08 16:02:48,083 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=788207542

@@ -1,0 +1,17 @@
+2024-01-08 16:31:50,798 [__main__:INFO] [main.py <19>: main.<module>] Logger successfully installed
+2024-01-08 16:31:50,798 [__main__:INFO] [main.py <20>: main.<module>] Starting bot
+2024-01-08 16:31:50,995 [__main__:DEBUG] [main.py <61>: main.choise_number] Reply choise_number for userid=1047314559
+2024-01-08 16:31:53,815 [__main__:DEBUG] [main.py <139>: main.start_solve_not_solved] Reply solve(not_solved) for userid=802771666
+2024-01-08 16:31:53,817 [__main__:DEBUG] [main.py <143>: main.start_solve_not_solved] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:54,772 [__main__:DEBUG] [main.py <139>: main.start_solve_not_solved] Reply solve(not_solved) for userid=788207542
+2024-01-08 16:31:54,773 [__main__:DEBUG] [main.py <143>: main.start_solve_not_solved] Connected to datebase(base) for userid=788207542
+2024-01-08 16:31:55,903 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=—топ, correct=цепќчка
+2024-01-08 16:31:55,904 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:55,904 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:55,905 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=802771666
+2024-01-08 16:31:56,639 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=788207542 user_input=—топ, correct=оптќвый
+2024-01-08 16:31:56,640 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=788207542
+2024-01-08 16:31:56,640 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=788207542
+2024-01-08 16:31:56,641 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=788207542
+2024-01-08 16:32:01,236 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=1047314559
+2024-01-08 16:32:01,236 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=1047314559

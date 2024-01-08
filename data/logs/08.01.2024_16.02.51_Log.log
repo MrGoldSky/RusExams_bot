@@ -1,0 +1,104 @@
+2024-01-08 16:02:51,350 [__main__:INFO] [main.py <19>: main.<module>] Logger successfully installed
+2024-01-08 16:02:51,350 [__main__:INFO] [main.py <20>: main.<module>] Starting bot
+2024-01-08 16:02:55,337 [__main__:DEBUG] [main.py <77>: main.statistics] Reply statistics for userid=788207542
+2024-01-08 16:02:55,338 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=788207542
+2024-01-08 16:20:57,041 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:02,678 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=802771666
+2024-01-08 16:21:02,679 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:17,006 [__main__:DEBUG] [main.py <61>: main.choise_number] Reply choise_number for userid=802771666
+2024-01-08 16:21:19,655 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:19,656 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=802771666
+2024-01-08 16:21:40,583 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:21:40,584 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:48,641 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=ч≈рпать, correct=ч≈рпать
+2024-01-08 16:21:48,642 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:48,830 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:21:48,832 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:57,743 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=черпјть, correct=совралј
+2024-01-08 16:21:57,744 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:21:58,073 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:21:58,074 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:08,647 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=н≈дуг, correct=нед”г
+2024-01-08 16:22:08,648 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:09,200 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:09,201 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:16,678 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=с»роты, correct=сирќты
+2024-01-08 16:22:16,679 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:17,144 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:17,145 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:22,690 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=сќгнутый, correct=сќгнутый
+2024-01-08 16:22:22,691 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:22,909 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:22,913 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:29,971 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=воссоздалј, correct=воссоздалј
+2024-01-08 16:22:29,972 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:30,253 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:30,255 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:36,528 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=звалј, correct=звалј
+2024-01-08 16:22:36,529 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:36,697 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:36,698 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:46,400 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=1616891432
+2024-01-08 16:22:47,050 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=совралј, correct=совралј
+2024-01-08 16:22:47,052 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:47,286 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:47,287 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:52,664 [__main__:DEBUG] [main.py <54>: main.information] Reply information for userid=1616891432
+2024-01-08 16:22:59,667 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=углубл®нный, correct=углубл®нный
+2024-01-08 16:22:59,669 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:22:59,977 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:22:59,978 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:23:03,266 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=1616891432
+2024-01-08 16:23:03,266 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=1616891432
+2024-01-08 16:23:10,533 [__main__:DEBUG] [main.py <61>: main.choise_number] Reply choise_number for userid=1616891432
+2024-01-08 16:23:15,454 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=1616891432
+2024-01-08 16:23:15,454 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=1616891432
+2024-01-08 16:24:59,379 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
+2024-01-08 16:24:59,380 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542
+2024-01-08 16:25:01,422 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=совралј, correct=совралј
+2024-01-08 16:25:01,423 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:01,529 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:25:01,530 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:08,895 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=ќтрочество, correct=ќтрочество
+2024-01-08 16:25:08,895 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:09,109 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:25:09,110 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:19,911 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=отбилилјсь, correct=облилјсь
+2024-01-08 16:25:19,911 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:20,221 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:25:20,223 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:26,795 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=—топ, correct=окл≈ить
+2024-01-08 16:25:26,796 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:26,796 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:26,797 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=802771666
+2024-01-08 16:25:29,888 [__main__:DEBUG] [main.py <77>: main.statistics] Reply statistics for userid=802771666
+2024-01-08 16:25:29,889 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=802771666
+2024-01-08 16:25:33,580 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=802771666
+2024-01-08 16:25:33,581 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=802771666
+2024-01-08 16:30:06,506 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
+2024-01-08 16:30:06,508 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542
+2024-01-08 16:30:16,228 [__main__:DEBUG] [main.py <77>: main.statistics] Reply statistics for userid=788207542
+2024-01-08 16:30:16,229 [__main__:DEBUG] [main.py <81>: main.statistics] Connected to datebase(base) for userid=788207542
+2024-01-08 16:30:17,481 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
+2024-01-08 16:30:17,482 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542
+2024-01-08 16:30:18,298 [__main__:DEBUG] [main.py <54>: main.information] Reply information for userid=788207542
+2024-01-08 16:30:19,817 [__main__:DEBUG] [main.py <61>: main.choise_number] Reply choise_number for userid=788207542
+2024-01-08 16:30:22,007 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=788207542
+2024-01-08 16:30:22,007 [__main__:DEBUG] [main.py <38>: main.start] Connection to database(base): restarting bot for userid=788207542
+2024-01-08 16:30:42,006 [__main__:DEBUG] [main.py <236>: main.top] Reply top for userid=788207542
+2024-01-08 16:30:42,007 [__main__:DEBUG] [main.py <240>: main.top] Connected to datebase(base) for userid=788207542
+2024-01-08 16:31:18,168 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:31:18,169 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:28,296 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=кр≈мн€, correct=кремня
+2024-01-08 16:31:28,297 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:28,792 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:31:28,793 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:36,735 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=прозорливј, correct=прозорл»ва
+2024-01-08 16:31:36,735 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:37,119 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:31:37,121 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:43,692 [__main__:DEBUG] [main.py <191>: main.check] Checking for userid=802771666 user_input=позволј, correct=позвалј
+2024-01-08 16:31:43,693 [__main__:DEBUG] [main.py <195>: main.check] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:44,132 [__main__:DEBUG] [main.py <115>: main.start_solve_any] Reply solve(any) for userid=802771666
+2024-01-08 16:31:44,134 [__main__:DEBUG] [main.py <119>: main.start_solve_any] Connected to datebase(base) for userid=802771666
+2024-01-08 16:31:45,222 [__main__:DEBUG] [main.py <28>: main.start] Connected to datebase(base) for userid=1047314559
