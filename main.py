@@ -25,7 +25,7 @@ def start(message):
     connection = connect_to_db()
     if len(connection) == 2:
         con, cur = connection[0], connection[1]
-        logger.info(f"Connected to datebase(base) for userid={message.chat.id}")
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
     else:
         logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
     try:
@@ -35,11 +35,10 @@ def start(message):
         con.close()
     except BaseException as e:
         if str(e).startswith("UNIQUE"):
-            logger.info(f"Connection to database(base): restarting bot for userid={message.chat.id}")
+            logger.debug(f"Connection to database(base): restarting bot for userid={message.chat.id}")
         else:
             logger.error(f"Insert to table(user_base) ERROR: values={message.chat.id}, {message.from_user.first_name} exception={e}")
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-
     bot_info = types.KeyboardButton(f"{chr(8252)}Информация о боте{chr(8252)}")
     choice_questions = types.KeyboardButton(f"{chr(128290)}Выбор номера ЕГЭ{chr(128290)}")
     statistics = types.KeyboardButton(f"{chr(128161)}Статистика{chr(128161)}")
@@ -63,11 +62,10 @@ def statistics(message):
     connection = connect_to_db()
     if len(connection) == 2:
         con, cur = connection[0], connection[1]
-        logger.info(f"Connected to datebase(base) for userid={message.chat.id}")
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
     else:
         logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
     try:
-
         accepted = len(cur.execute(f"""SELECT id FROM solved
                                 WHERE user_id == {message.chat.id} AND solved == 1""").fetchall())
         wrong_answer = len(cur.execute(f"""SELECT id FROM solved
@@ -76,7 +74,6 @@ def statistics(message):
         con.close()
     except BaseException as e:
         logger.error(f"Select from table (solved, question4) ERROR: values=accepted, wrong_answer, not_stated exception={e}")
-
     printy(message.chat.id, f"""Статистика ЕГЭ №4\n
 Решено верно {chr(9989)} {accepted}
 Решено неверно {chr(10060)} {wrong_answer}
@@ -86,7 +83,6 @@ def statistics(message):
 @bot.message_handler(func=lambda message: message.text == f"Начать решать!")
 def solve(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-
     not_solved = types.KeyboardButton(f"Решать нерешенные")
     solved = types.KeyboardButton(f"Повторить решенные")
     solve_any = types.KeyboardButton(f"Решать любые")
@@ -104,7 +100,7 @@ def start_solve_any(message):
     connection = connect_to_db()
     if len(connection) == 2:
         con, cur = connection[0], connection[1]
-        logger.info(f"Connected to datebase(base) for userid={message.chat.id}")
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
     else:
         logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
     try:
@@ -112,14 +108,40 @@ def start_solve_any(message):
         solve_id = random.choice(ids)[0]
         task = cur.execute(f"""SELECT task FROM question4 
                                WHERE id == {solve_id}""").fetchone()[0]
-
         correct = cur.execute(f"""SELECT correct FROM question4
                                   WHERE id == {solve_id}""").fetchone()[0]
         con.close()
     except BaseException as e:
         logger.error(f"Select from table (question4) ERROR: user_id={message.chat.id} values= ids, task, correct exception={e}")
-
     bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "any", solve_id)
+
+
+@bot.message_handler(func=lambda message: message.text == f"Решать нерешенные")
+def start_solve_not_solved(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    markup.add(types.KeyboardButton(f"Стоп"))
+    logger.debug(f"Reply solve(not_solved) for userid={message.chat.id}")
+    connection = connect_to_db()
+    if len(connection) == 2:
+        con, cur = connection[0], connection[1]
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
+    else:
+        logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
+    try:
+        ids = cur.execute(f"""SELECT id FROM question4""").fetchall()
+        solved = cur.execute(f"""SELECT task_id FROM solved WHERE solved == 1""").fetchall()   
+        solve_id = random.choice(ids)
+        while solve_id in solved:
+            solve_id = random.choice(ids)
+        solve_id = solve_id[0]
+        task = cur.execute(f"""SELECT task FROM question4 
+                               WHERE id == {solve_id}""").fetchone()[0]
+        correct = cur.execute(f"""SELECT correct FROM question4
+                                  WHERE id == {solve_id}""").fetchone()[0]
+        con.close()
+    except BaseException as e:
+        logger.error(f"Select from table (question4, solved) ERROR: user_id={message.chat.id} values= ids, task, correct, task_id exception={e}")
+    bot.register_next_step_handler(printy(message.chat.id, f'{task}', reply_markup=markup), check, correct, "not_solved", solve_id)
 
 
 def check(message, correct: str, type_solve: str, solve_id: int):
@@ -129,7 +151,7 @@ def check(message, correct: str, type_solve: str, solve_id: int):
     connection = connect_to_db()
     if len(connection) == 2:
         con, cur = connection[0], connection[1]
-        logger.info(f"Connected to datebase(base) for userid={message.chat.id}")
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
     else:
         logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
     if message.text == "Стоп":
@@ -158,11 +180,12 @@ def check(message, correct: str, type_solve: str, solve_id: int):
             con.close()
         except BaseException as e:
             logger.error(f"UPDATE table (user_base) ERROR: values=solve_id, task, correct exception={e}")
-
         printy(message.chat.id, f"{chr(128078)}")
         printy(message.chat.id, f"{correct.lower()} - {correct}", reply_markup=markup)
     if type_solve == 'any':
         start_solve_any(message)
+    elif type_solve == 'not_solved':
+        start_solve_not_solved(message)
 
 
 @bot.message_handler(func=lambda message: message.text == f"{chr(128175)}Топ пользователей{chr(128175)}")
@@ -171,12 +194,11 @@ def top(message):
     connection = connect_to_db()
     if len(connection) == 2:
         con, cur = connection[0], connection[1]
-        logger.info(f"Connected to datebase(base) for userid={message.chat.id}")
+        logger.debug(f"Connected to datebase(base) for userid={message.chat.id}")
     else:
         logger.critical(f"Connection to database(base) ERROR: userid={message.chat.id} exception={connection[0]}")
     try:
         current_top = []
-
         for user_id in cur.execute(f"""SELECT DISTINCT user_id FROM solved""").fetchall():
             current_accepted = len(cur.execute(f"""SELECT id FROM solved
                                     WHERE user_id == {user_id[0]} AND solved == 1""").fetchall())
@@ -194,7 +216,6 @@ def top(message):
         logger.error(f"Select from table (solved) ERROR: values=user_id exception={e}")
     current_top = sorted(current_top, key=lambda x:(-x['current_accepted'], x['current_not_stated'], x['current_wrong_answer']))
     text = f"Топ пользователей по решению\!\n"
-    
     if len(current_top) < 3:
         n = len(current_top)
     else:
